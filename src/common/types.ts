@@ -4,11 +4,11 @@ export type SearchBarProps = {
   performSearch: (searchText: string) => void;
 };
 
-interface MatchParams {
+interface SearchPageParams {
   searchText: string;
 }
 
-export interface SearchPageProps extends RouteComponentProps<MatchParams> {}
+export interface SearchPageProps extends RouteComponentProps<SearchPageParams> {}
 
 export type SearchArticle = {
   id: number;
@@ -22,3 +22,24 @@ export type SearchResponse = {
   articles: SearchArticle[];
   totalCount: number;
 };
+
+export type ArticleDetails = {
+  id: string;
+  title: string;
+  subtitle?: string;
+  price: number;
+  descriptionHtml: string;
+  imageUrl: string;
+  sellerId: string;
+};
+
+export type User = {
+  id: string;
+  name: string;
+};
+
+interface ProductDetailsParams {
+  articleId: string;
+}
+
+export interface ProductDetailsPageProps extends RouteComponentProps<ProductDetailsParams> {}

@@ -16,6 +16,22 @@ const listArticlesBySearchText = (
     .catch((error) => onErrorCallback(error));
 };
 
-const showArticleById = () => {};
+const showArticleById = (
+  articleId: string,
+  articleCallback: any,
+  userCallback: any,
+  onErrorCallback: any
+) => {
+  axios
+    .get(`${baseUrl}/article-details`, { params: { articleId, apiToken } })
+    .then((response) => {
+      articleCallback(response.data);
+      return axios.get(`${baseUrl}/user`, {
+        params: { userId: response.data.sellerId, apiToken },
+      });
+    })
+    .then((response) => userCallback(response.data))
+    .catch((error) => onErrorCallback(error));
+};
 
 export { listArticlesBySearchText, showArticleById };
