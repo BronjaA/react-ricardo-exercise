@@ -9,3 +9,16 @@ interface MatchParams {
 }
 
 export interface SearchPageProps extends RouteComponentProps<MatchParams> {}
+
+export type SearchArticle = {
+  id: number;
+  title: string;
+  endDate: string;
+  imageUrl: string;
+  buyNowPrice: number;
+};
+
+export type SearchResponse = {
+  articles: SearchArticle[];
+  totalCount: number;
+};

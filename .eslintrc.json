@@ -15,12 +15,10 @@
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
     "quotes": [2, "double", { "avoidEscape": true }],
-    "react/jsx-filename-extension": [
-      2,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
-    ],
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "react/jsx-one-expression-per-line": "off",
     "no-console": "off",
+    "no-alert": "off",
     "no-unused-vars": "warn",
     "no-use-before-define": "off",
     "semi": "warn",
