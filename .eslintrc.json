@@ -30,6 +30,7 @@
     "import/no-unresolved": "off",
     "import/extensions": "off",
     "arrow-body-style": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off"
   }
 }
