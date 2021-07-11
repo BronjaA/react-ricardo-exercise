@@ -19,11 +19,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ performSearch }) => {
         onChange={(e) => setSearchText(e.target.value)}
         placeholder="Search Ricardo"
       />
-      <input
-        type="submit"
-        value="Search"
-        disabled={searchText === "" && true}
-      />
+      <input type="submit" value="Search" disabled={!searchText} />
     </form>
   );
 };

@@ -11,7 +11,17 @@ const HomePage = () => {
 
   return (
     <div id="home-page-container">
-      <SearchBar performSearch={performSearch} />
+      <div className="heading-container">
+        <div className="filter">
+          <div className="header-shadow" />
+          <div className="heading-wrapper">
+            <h1>
+              Securely buy & sell <br /> with over <br /> 3 Million users
+            </h1>
+            <SearchBar performSearch={performSearch} />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
