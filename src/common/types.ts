@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { RouteComponentProps } from "react-router-dom";
 
 export type SearchBarProps = {
@@ -8,7 +9,21 @@ interface SearchPageParams {
   searchText: string;
 }
 
-export interface SearchPageProps extends RouteComponentProps<SearchPageParams> {}
+interface SearchPageFilterProps {
+  buyNowFilter: boolean;
+  toggleBuyNowFilter: () => void;
+  auctionFilter: boolean;
+  toggleAuctionFilter: () => void;
+  savedMinPrice: number;
+  setSavedMinPrice: (minPrice: number) => void;
+  savedMaxPrice: number;
+  setSavedMaxPrice: (maxPrice: number) => void;
+  resetTypeFilters: () => void;
+}
+
+export interface SearchPageProps
+  extends RouteComponentProps<SearchPageParams>,
+    SearchPageFilterProps {}
 
 export type SearchArticle = {
   id: number;
@@ -43,3 +58,11 @@ interface ProductDetailsParams {
 }
 
 export interface ProductDetailsPageProps extends RouteComponentProps<ProductDetailsParams> {}
+
+export type PriceInputProps = {
+  value: number;
+  placeholder: string;
+  minAllowedPrice: number;
+  maxAllowedPrice: number;
+  onChange: (price: number) => void;
+};

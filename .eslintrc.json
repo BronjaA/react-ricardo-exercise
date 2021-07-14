@@ -17,6 +17,7 @@
     "quotes": [2, "double", { "avoidEscape": true }],
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off",
     "no-console": "off",
     "no-alert": "off",
     "no-unused-vars": "warn",
@@ -30,6 +31,7 @@
     "arrow-body-style": "off",
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
-    "react/no-danger": "off"
+    "react/no-danger": "off",
+    "operator-linebreak": "off"
   }
 }
