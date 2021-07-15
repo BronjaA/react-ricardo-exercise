@@ -32,6 +32,8 @@
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "react/no-danger": "off",
-    "operator-linebreak": "off"
+    "operator-linebreak": "off",
+    "prefer-const": "warn",
+    "prefer-template": "off"
   }
 }

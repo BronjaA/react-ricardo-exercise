@@ -30,8 +30,13 @@ const SearchPage: React.FC<SearchPageProps> = ({
   useEffect(() => {
     const onSuccessCallback = (data: SearchResponse) => {
       setTotalCount(data.totalCount);
-      setFetchedSearchArticles(data.articles);
-      setFilteredSearchArticles(returnFilteredArticles(data.articles));
+
+      // Sorts the fetched SearchArticle array by date ascending
+      const sortedArray = data.articles;
+      sortedArray.sort((a, b) => Date.parse(a.endDate) - Date.parse(b.endDate));
+
+      setFetchedSearchArticles(sortedArray);
+      setFilteredSearchArticles(returnFilteredArticles(sortedArray));
 
       const minPrice = data.articles.reduce((prev, curr) => {
         if (!prev.buyNowPrice) return curr;
@@ -183,7 +188,7 @@ const SearchPage: React.FC<SearchPageProps> = ({
 
           {/* Search results */}
           <div id="search-results-wrapper">
-            <p>Total count: {totalCount}</p>
+            <p className="total-count">Total count: {totalCount}</p>
             <div className="articles-grid">
               {filteredSearchArticles!.map((searchArticle) => {
                 const { id, title, endDate, imageUrl, buyNowPrice } = searchArticle;

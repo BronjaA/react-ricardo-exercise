@@ -1,8 +1,15 @@
-import { useHistory } from "react-router-dom";
 import "./home-page.scss";
+import React, { useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import SearchBar from "../../components/search-bar/SearchBar";
+import { HomePageProps } from "../../common/types";
 
-const HomePage = () => {
+const HomePage: React.FC<HomePageProps> = ({ resetPriceRange, resetTypeFilters }) => {
+  useEffect(() => {
+    resetPriceRange();
+    resetTypeFilters();
+  }, []);
+
   const history = useHistory();
 
   const performSearch = (searchText: string) => {

@@ -95,6 +95,10 @@ $ricardo-orange: #ef7310;
 #search-results-wrapper {
   margin-top: 2rem;
 
+  .total-count {
+    color: $dark-gray;
+  }
+
   .articles-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);

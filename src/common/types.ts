@@ -1,5 +1,24 @@
 /* eslint-disable no-unused-vars */
+import { AxiosError } from "axios";
 import { RouteComponentProps } from "react-router-dom";
+
+export type listMethod = (
+  searchText: string,
+  onSuccessCallback: (responseData: SearchResponse) => void,
+  onErrorCallback: (error: Error | AxiosError) => void
+) => void;
+
+export type showMethod = (
+  articleId: string,
+  articleCallback: (responseData: ArticleDetails) => void,
+  userCallback: (responseData: User) => void,
+  onErrorCallback: (error: Error | AxiosError) => void
+) => void;
+
+export type HomePageProps = {
+  resetPriceRange: () => void;
+  resetTypeFilters: () => void;
+};
 
 export type SearchBarProps = {
   performSearch: (searchText: string) => void;

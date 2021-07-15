@@ -40,11 +40,9 @@ function App() {
           <Route
             path="/"
             exact
-            render={() => {
-              resetPriceRange();
-              resetTypeFilters();
-              return <HomePage />;
-            }}
+            render={() => (
+              <HomePage resetPriceRange={resetPriceRange} resetTypeFilters={resetTypeFilters} />
+            )}
           />
           <Route
             path="/search/:searchText"
