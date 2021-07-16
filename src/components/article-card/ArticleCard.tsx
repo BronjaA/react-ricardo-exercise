@@ -38,14 +38,15 @@ const ArticleCard: React.FC<SearchArticle> = ({ id, imageUrl, title, endDate, bu
   const initializeCountDown = () => {
     intervalId = setInterval(() => {
       const difference = Date.parse(endDate) - Date.now();
-      const differenceDate = new Date(difference);
       if (difference <= 1000) {
+        setDateString("Expired");
         clearInterval(intervalId);
+      } else {
+        const differenceDate = new Date(difference);
+        const minutes = ("0" + differenceDate.getMinutes()).slice(-2);
+        const seconds = ("0" + differenceDate.getSeconds()).slice(-2);
+        setDateString(`ends in ${minutes}:${seconds}`);
       }
-
-      const minutes = ("0" + differenceDate.getMinutes()).slice(-2);
-      const seconds = ("0" + differenceDate.getSeconds()).slice(-2);
-      setDateString(`ends in ${minutes}:${seconds}`);
     }, 1000);
   };
 
