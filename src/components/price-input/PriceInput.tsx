@@ -24,12 +24,12 @@ const PriceInput: React.FC<PriceInputProps> = ({
   const onPriceChange = () => {
     if (priceValue < minAllowedPrice) {
       setPriceValue(minAllowedPrice);
-      onChange(minAllowedPrice);
+      onChange(+minAllowedPrice);
     } else if (priceValue > maxAllowedPrice) {
       setPriceValue(maxAllowedPrice);
-      onChange(maxAllowedPrice);
+      onChange(+maxAllowedPrice);
     } else {
-      onChange(priceValue);
+      onChange(+priceValue);
     }
   };
 

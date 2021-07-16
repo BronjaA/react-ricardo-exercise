@@ -41,7 +41,7 @@ const ProductDetailsPage: React.FC<ProductDetailsPageProps> = ({ match }) => {
             </p>
             <p>
               <strong>Price: </strong>
-              <span className="price">{article?.price}</span>
+              <span className="price">{article?.price} CHF</span>
             </p>
             <hr />
             <article

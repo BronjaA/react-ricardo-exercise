@@ -188,7 +188,7 @@ const SearchPage: React.FC<SearchPageProps> = ({
 
           {/* Search results */}
           <div id="search-results-wrapper">
-            <p className="total-count">Total count: {totalCount}</p>
+            <p className="total-count">Total count: {totalCount.toLocaleString("de-DE")}</p>
             <div className="articles-grid">
               {filteredSearchArticles!.map((searchArticle) => {
                 const { id, title, endDate, imageUrl, buyNowPrice } = searchArticle;

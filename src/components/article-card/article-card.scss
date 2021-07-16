@@ -2,7 +2,9 @@
   position: relative;
   display: grid;
   grid-template-rows: auto 1fr auto 1fr;
-  box-shadow: 2px 2px 12px 0 rgba(0, 0, 0, 0.15);
+  // box-shadow: 2px 2px 12px 0 rgba(0, 0, 0, 0.15);
+  // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
   text-decoration: none;
   color: black;
