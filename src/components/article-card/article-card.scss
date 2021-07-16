@@ -1,8 +1,10 @@
 #article-card-container {
   position: relative;
   display: grid;
-  grid-template-rows: auto 1fr auto auto;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  grid-template-rows: auto 1fr auto 1fr;
+  // box-shadow: 2px 2px 12px 0 rgba(0, 0, 0, 0.15);
+  // box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
   text-decoration: none;
   color: black;
@@ -22,16 +24,33 @@
   }
 
   .title {
-    margin: 1rem;
+    margin: 0.5rem;
+    font-weight: 500;
     text-overflow: ellipsis;
     overflow: hidden;
   }
 
   .end-date {
-    margin: 1rem;
+    margin: 0.5rem;
   }
 
   .price {
+    text-align: right;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
     margin: 2rem 0.5rem 0.5rem 0.5rem;
+
+    span:first-of-type {
+      color: gray;
+      font-weight: 400;
+      font-size: 0.9rem;
+      font-size: 1rem;
+    }
   }
+}
+
+.ends-soon {
+  color: red;
 }
